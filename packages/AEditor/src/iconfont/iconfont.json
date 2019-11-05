@@ -1,0 +1,114 @@
+{
+  "id": "1414508",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10885217",
+      "name": "add1",
+      "font_class": "add",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "11604404",
+      "name": "标题正文切换",
+      "font_class": "biaotizhengwenqiehuan",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "11614205",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "11614206",
+      "name": "前进-实",
+      "font_class": "qianjin-shi",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "11614207",
+      "name": "728编辑器_字体大小",
+      "font_class": "bianjiqi_zitidaxiao",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "11614208",
+      "name": "字体",
+      "font_class": "ziti",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "11614209",
+      "name": "加粗",
+      "font_class": "jiacu",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "11614210",
+      "name": "表格",
+      "font_class": "biaoge",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "11614211",
+      "name": "斜体",
+      "font_class": "xieti",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "11614222",
+      "name": "编辑器 · 删除线",
+      "font_class": "bianjiqishanchuxian",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "11614223",
+      "name": "下划线",
+      "font_class": "xiahuaxian",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "11614224",
+      "name": "颜色",
+      "font_class": "yanse",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "11614225",
+      "name": "颜色 (1)",
+      "font_class": "yanse1",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "11614226",
+      "name": "超链接",
+      "font_class": "chaolianjie",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "11614402",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    }
+  ]
+}
