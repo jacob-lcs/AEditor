@@ -109,6 +109,13 @@
       "font_class": "tupian",
       "unicode": "e60f",
       "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "11639806",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "e610",
+      "unicode_decimal": 58896
     }
   ]
 }

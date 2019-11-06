@@ -7,7 +7,18 @@
       <UnderLine />
       <InsertImage />
     </div>
-    <div class="content" contenteditable="true" />
+    <div id="AEeditor">
+      <!--自定义右键菜单html代码-->
+      <div class="menu" :class="{active: contextActive}" contenteditable="false" @click="closeMenu">
+        <div class="menu-item">
+          <input v-model="imgSize" type="range" class="menu__size-change">
+        </div>
+        <div class="menu-item" @click="floatLeft">悬浮在最左边</div>
+        <div class="menu-item" @click="floatRight">悬浮在最右边</div>
+        <div class="menu-item" @click="imgCenter">居中</div>
+      </div>
+      <div contenteditable="true" class="content" />
+    </div>
   </div>
 </template>
 
@@ -25,6 +36,38 @@ export default {
     StrickOut,
     UnderLine,
     InsertImage
+  },
+  data() {
+    return {
+      contextActive: false,
+      imgSize: 100
+    }
+  },
+  watch: {
+    imgSize() {
+      window.imgEl.style.width = `${this.imgSize}%`
+    }
+  },
+  mounted() {
+    // document.onselectionchange = () => {
+    //   const selection = window.getSelection()
+    //   const range = selection.getRangeAt(0)
+    //   console.log(range)
+    // }
+  },
+  methods: {
+    closeMenu() {
+      document.getElementsByClassName('menu')[0].style.display = 'none'
+    },
+    floatLeft() {
+      window.imgEl.parentNode.style.textAlign = 'left'
+    },
+    floatRight() {
+      window.imgEl.parentNode.style.textAlign = 'right'
+    },
+    imgCenter() {
+      window.imgEl.parentNode.style.textAlign = 'center'
+    }
   }
 }
 </script>
@@ -42,12 +85,42 @@ export default {
   background-color: #f1f1f1;
   border-radius: 5px 5px 0 0;
   user-select: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .content{
   height: 400px;
   text-align: left;
   overflow-y: scroll;
 }
+
+/*css代码*/
+.menu{
+  width: 200px; /*设置为0 隐藏自定义菜单*/
+  height: 125px;
+  overflow: hidden; /*隐藏溢出的元素*/
+  box-shadow: 0 1px 1px #888,1px 0 1px #ccc;
+  position: absolute; /*自定义菜单相对与body元素进行定位*/
+  display: none;
+  background-color: white;
+  text-align: left;
+}
+.menu-item{
+  width: 130px;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.menu-item:hover{
+  background-color: #f5f5f5;
+  width: 100%;
+}
+.menu__size-change{
+  width: 180px;
+  cursor: pointer;
+}
+
 /*控制整个滚动条*/
 ::-webkit-scrollbar {
   background-color: #f5f5f5;
