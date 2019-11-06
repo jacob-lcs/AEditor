@@ -12,6 +12,7 @@
     "lib": "vue-cli-service build --target lib --name aeditor --dest lib packages/index.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^3.3.2",
     "vue": "^2.6.10"
   },
