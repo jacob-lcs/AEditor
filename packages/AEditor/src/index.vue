@@ -6,6 +6,8 @@
       <StrickOut />
       <UnderLine />
       <InsertImage />
+      <Italic />
+      <CreateLink :cureditor="currentEditor" />
     </div>
     <div id="AEeditor">
       <!--自定义右键菜单html代码-->
@@ -17,7 +19,7 @@
         <div class="menu-item" @click="floatRight">悬浮在最右边</div>
         <div class="menu-item" @click="imgCenter">居中</div>
       </div>
-      <div contenteditable="true" class="content" />
+      <div ref="AEditor" contenteditable="true" class="content" @keydown="ListenserKeyDown" />
     </div>
   </div>
 </template>
@@ -27,7 +29,9 @@ import Title from './components/title/index'
 import Bold from './components/bold/index'
 import StrickOut from './components/strickout/index'
 import UnderLine from './components/underline/index'
-import InsertImage from './components/insert-image/index'
+import InsertImage from './components/insertImage/index'
+import Italic from './components/italic/index'
+import CreateLink from './components/createLink/index'
 export default {
   name: 'AEditor',
   components: {
@@ -35,13 +39,18 @@ export default {
     Bold,
     StrickOut,
     UnderLine,
-    InsertImage
+    InsertImage,
+    Italic,
+    CreateLink
   },
   data() {
     return {
       contextActive: false,
-      imgSize: 100
+      imgSize: 100,
+      currentEditor: {}
     }
+  },
+  computed: {
   },
   watch: {
     imgSize() {
@@ -54,6 +63,7 @@ export default {
     //   const range = selection.getRangeAt(0)
     //   console.log(range)
     // }
+    this.currentEditor = this.$refs['AEditor']
   },
   methods: {
     closeMenu() {
@@ -67,6 +77,13 @@ export default {
     },
     imgCenter() {
       window.imgEl.parentNode.style.textAlign = 'center'
+    },
+    ListenserKeyDown() {
+      // 监听输入 tab 时插入 四个空格
+      if (event.keyCode === 9) {
+        document.execCommand('insertText', false, '    ')
+        event.preventDefault()
+      }
     }
   }
 }
