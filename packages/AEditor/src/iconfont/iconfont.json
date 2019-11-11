@@ -116,6 +116,20 @@
       "font_class": "shangchuan",
       "unicode": "e610",
       "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "11715924",
+      "name": "阅读页_字体减小",
+      "font_class": "yueduye_zitijianxiao",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "11715939",
+      "name": "阅读页_字体增大",
+      "font_class": "yueduye_zitizengda",
+      "unicode": "e612",
+      "unicode_decimal": 58898
     }
   ]
 }

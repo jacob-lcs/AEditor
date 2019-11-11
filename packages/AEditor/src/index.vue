@@ -2,14 +2,14 @@
   <div class="container">
     <div class="toolbar">
       <Title />
-      <Bold />
-      <StrickOut />
-      <UnderLine />
-      <InsertImage />
-      <Italic />
-      <CreateLink :cureditor="currentEditor" />
-      <ForeColor :cureditor="currentEditor" />
-      <BackColor :cureditor="currentEditor" />
+      <Bold title="加粗" />
+      <StrickOut title="删除线" />
+      <UnderLine title="下划线" />
+      <InsertImage title="插入图片" />
+      <Italic title="斜体" />
+      <CreateLink :cureditor="currentEditor" title="插入链接" />
+      <ForeColor :cureditor="currentEditor" title="字体颜色" />
+      <BackColor :cureditor="currentEditor" title="背景颜色" />
     </div>
     <div id="AEeditor">
       <!--自定义右键菜单html代码-->
