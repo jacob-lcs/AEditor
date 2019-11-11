@@ -9,7 +9,6 @@
 </template>
 
 <script>
-// import placeCaretAtEnd from '../../utils/placeCaretAtEnd'
 import { Chrome as colorPicker } from 'vue-color'
 import setPreviousRange from '../../utils/setPreviousRange'
 export default {
@@ -36,8 +35,10 @@ export default {
       this.preSelection = window.getSelection()
       this.containsEditor = this.preSelection.containsNode(this.cureditor, true)
       const range = document.createRange()
-      range.setStart(this.preSelection.getRangeAt(0).startContainer, this.preSelection.getRangeAt(0).startOffset)
-      range.setEnd(this.preSelection.getRangeAt(0).endContainer, this.preSelection.getRangeAt(0).endOffset)
+      if (window.getSelection().rangeCount >= 1) {
+        range.setStart(this.preSelection.getRangeAt(0).startContainer, this.preSelection.getRangeAt(0).startOffset)
+        range.setEnd(this.preSelection.getRangeAt(0).endContainer, this.preSelection.getRangeAt(0).endOffset)
+      }
       this.range = range
       this.$refs['fore-color-block'].style.display = this.$refs['fore-color-block'].style.display === 'block' ? 'none' : 'block'
     },
