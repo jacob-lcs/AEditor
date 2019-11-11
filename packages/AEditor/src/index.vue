@@ -9,6 +9,7 @@
       <Italic />
       <CreateLink :cureditor="currentEditor" />
       <ForeColor :cureditor="currentEditor" />
+      <BackColor :cureditor="currentEditor" />
     </div>
     <div id="AEeditor">
       <!--自定义右键菜单html代码-->
@@ -34,6 +35,7 @@ import InsertImage from './components/insertImage/index'
 import Italic from './components/italic/index'
 import CreateLink from './components/createLink/index'
 import ForeColor from './components/foreColor/index'
+import BackColor from './components/backColor/index'
 export default {
   name: 'AEditor',
   components: {
@@ -44,7 +46,8 @@ export default {
     InsertImage,
     Italic,
     CreateLink,
-    ForeColor
+    ForeColor,
+    BackColor
   },
   data() {
     return {
