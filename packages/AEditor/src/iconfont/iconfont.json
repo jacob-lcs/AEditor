@@ -130,6 +130,13 @@
       "font_class": "yueduye_zitizengda",
       "unicode": "e612",
       "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "11732765",
+      "name": "公式_普通",
+      "font_class": "gongshi_putong",
+      "unicode": "e613",
+      "unicode_decimal": 58899
     }
   ]
 }
