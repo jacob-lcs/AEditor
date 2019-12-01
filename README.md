@@ -1,7 +1,7 @@
-<center><img style="width: 100px" src="./readme-assets/logo.png"></center>
-<center><span style="font-size: 50px">AEditor</span><center>
+<p align="center"><img style="width: 100px" src="./readme-assets/logo.png"></p>
+<p align="center">AEditor</p>
 
-<center>🚀一个可以输入公式的富文本编辑器</center>
+<p align="center">🚀一个可以输入公式的富文本编辑器</p>
 
 ## 使用方法
 
