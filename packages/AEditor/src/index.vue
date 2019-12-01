@@ -26,7 +26,7 @@
         <div class="menu-item" @click="floatRight">悬浮在最右边</div>
         <div class="menu-item" @click="imgCenter">居中</div>
       </div>
-      <div ref="AEditor" contenteditable="true" class="content" @keydown="ListenserKeyDown" />
+      <div ref="AEditor" contenteditable="true" class="content" @keydown="ListenserKeyDown" @click="changeValue" @blur="changeValue" @input="changeValue" />
     </div>
   </div>
 </template>
@@ -65,6 +65,10 @@ export default {
     Undo,
     Formula
   },
+  model: {
+    prop: 'value',
+    event: 'update'
+  },
   data() {
     return {
       contextActive: false,
@@ -72,19 +76,12 @@ export default {
       currentEditor: {}
     }
   },
-  computed: {
-  },
   watch: {
     imgSize() {
       window.imgEl.style.width = `${this.imgSize}%`
     }
   },
   mounted() {
-    // document.onselectionchange = () => {
-    //   const selection = window.getSelection()
-    //   const range = selection.getRangeAt(0)
-    //   console.log(range)
-    // }
     this.currentEditor = this.$refs['AEditor']
   },
   methods: {
@@ -106,6 +103,9 @@ export default {
         document.execCommand('insertText', false, '    ')
         event.preventDefault()
       }
+    },
+    changeValue() {
+      this.$emit('update', this.currentEditor.innerHTML)
     }
   }
 }
@@ -145,6 +145,7 @@ export default {
   display: none;
   background-color: white;
   text-align: left;
+  z-index: 8000;
 }
 .menu-item{
   width: 130px;

@@ -2,13 +2,19 @@
   <div id="app">
     <img src="./assets/logo.png" alt="logo" class="logo">
     <p class="name">AEditor</p>
-    <AEditor />
+    <AEditor v-model="content" />
+    <div class="content" v-html="content" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      content: ''
+    }
+  }
 }
 </script>
 
@@ -28,5 +34,19 @@ export default {
 .name{
   font-size: 50px;
   margin: 10px 0 30px 0;
+}
+
+</style>
+
+<style scoped>
+
+.content{
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-top: 10px;
+  overflow-y: scroll;
+  text-align: left;
 }
 </style>
