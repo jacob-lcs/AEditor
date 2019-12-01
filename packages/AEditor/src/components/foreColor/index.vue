@@ -65,6 +65,7 @@ export default {
   position: absolute;
   top: 35px;
   box-shadow: 0 0 2px rgba(0,0,0,.3), 0 4px 8px rgba(0,0,0,.3);
+  z-index: 8000;
 }
 .fore-color__submit{
   height: 25px;

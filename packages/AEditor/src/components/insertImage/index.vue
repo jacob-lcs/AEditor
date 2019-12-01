@@ -67,6 +67,7 @@ export default {
   width: 250px;
   background-color: #f5f5f5;
   border-radius: 10%;
+  z-index: 8000;
 }
 .upload-img{
   overflow: hidden;
