@@ -10,6 +10,11 @@
       <CreateLink :cureditor="currentEditor" title="插入链接" />
       <ForeColor :cureditor="currentEditor" title="字体颜色" />
       <BackColor :cureditor="currentEditor" title="背景颜色" />
+      <DecreaseFontSize title="减小字体" />
+      <IncreaseFontSize title="增大字体" />
+      <Undo title="撤销" />
+      <Redo title="重做" />
+      <Formula :cureditor="currentEditor" />
     </div>
     <div id="AEeditor">
       <!--自定义右键菜单html代码-->
@@ -27,6 +32,7 @@
 </template>
 
 <script>
+import './components/formula/components/mspace'
 import Title from './components/title/index'
 import Bold from './components/bold/index'
 import StrickOut from './components/strickout/index'
@@ -36,6 +42,11 @@ import Italic from './components/italic/index'
 import CreateLink from './components/createLink/index'
 import ForeColor from './components/foreColor/index'
 import BackColor from './components/backColor/index'
+import DecreaseFontSize from './components/decreaseFontSize/index'
+import IncreaseFontSize from './components/increaseFontSize/index'
+import Redo from './components/redo/index'
+import Undo from './components/undo/index'
+import Formula from './components/formula/index'
 export default {
   name: 'AEditor',
   components: {
@@ -47,7 +58,12 @@ export default {
     Italic,
     CreateLink,
     ForeColor,
-    BackColor
+    BackColor,
+    DecreaseFontSize,
+    IncreaseFontSize,
+    Redo,
+    Undo,
+    Formula
   },
   data() {
     return {
@@ -115,6 +131,8 @@ export default {
   height: 400px;
   text-align: left;
   overflow-y: scroll;
+  position: relative;
+  z-index: 1000;
 }
 
 /*css代码*/
