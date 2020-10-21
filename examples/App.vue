@@ -2,8 +2,10 @@
   <div id="app">
     <img src="./assets/logo.png" alt="logo" class="logo">
     <p class="name">AEditor</p>
-    <AEditor v-model="content" />
-    <div class="content" v-html="content" />
+    <div class="editor-container">
+      <AEditor v-model="content" class="editor" />
+      <div class="content" v-html="content" />
+    </div>
   </div>
 </template>
 
@@ -38,15 +40,18 @@ export default {
 
 </style>
 
-<style scoped>
-
-.content{
-  width: 500px;
-  height: 300px;
-  border: 1px solid black;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow-y: scroll;
-  text-align: left;
+<style lang="less" scoped>
+.editor-container{
+  display: flex;
+  .content{
+    width: 500px;
+    height: 423px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow-y: scroll;
+    text-align: left;
+  }
 }
+
 </style>
